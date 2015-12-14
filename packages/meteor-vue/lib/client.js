@@ -56,13 +56,7 @@ PatchVue = function(Vue, blazeCompat) {
             this.$$syncDict[key] = Tracker.autorun(function () {
                 var val;
                 val = rxFunc.call(self);
-                if (val) {
-                    if (typeof val.fetch === 'function') {
-                        return self.$set(key, val.fetch());
-                    } else {
-                        return self.$set(key, val);
-                    }
-                }
+                return self.$set(key, val);
             });
         }
     };
