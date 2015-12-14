@@ -20,3 +20,4 @@ Most of your Vue components will be fully hot-reloaded (template, style and code
 - Unit Tests
 - Test mobile target
 - Make a node package?
+- Publish akryum:vue-patch on atmosphere
