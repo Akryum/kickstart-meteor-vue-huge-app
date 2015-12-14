@@ -20,6 +20,7 @@ RootVue = new Vue({
     </div>\
     </div>\
     </div>',
+	replace: false,
     data() {
         return {
             currentView: null
