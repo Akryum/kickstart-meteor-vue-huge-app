@@ -1,0 +1,68 @@
+@import './vars.less';
+@import './mixins.less';
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    color: @page-color;
+    background: @page-background;
+    margin: 24px;
+    text-align: center;
+    font-size: 11pt;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+}
+
+p {
+    max-width: 400px;
+    margin: @padding auto;
+    text-align: left;
+
+    img {
+        max-width: 100%;
+        margin: @padding;
+    }
+}
+
+nav {
+    a {
+        margin-right: 12px;
+        color: @nav-link-color;
+        border-bottom: solid 4px transparent;
+
+        &:hover {
+            border-bottom-color: @vue-color;
+        }
+    }
+}
+
+.console {
+    background: @console-background;
+    color: @console-color;
+    font-family: monospace;
+    padding: @console-padding;
+    border-radius: @border-radius;
+}
+
+.dir {
+    background: @dir-background;
+    color: fade(@dir-color, 60%);
+    padding: @dir-padding;
+    border-radius: @border-radius;
+    font-family: monospace;
+
+    span {
+        color: @dir-color;
+        margin: 0 2px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
