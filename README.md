@@ -1,6 +1,8 @@
 # Meteor + Webpack + Vue (for a big web app)
 
-Example meteor project featuring flow-router, code-splitting, vue.js components hot-reloading
+Example meteor project featuring flow-router, code-splitting, vue.js components hot-reloading.
+
+It looks like this:
 
 ![screenshot](preview.png?raw=true "Screenshot of the kickstart app")
 
