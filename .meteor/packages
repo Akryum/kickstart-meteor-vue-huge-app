@@ -15,3 +15,4 @@ tracker                 # Meteor's client-side reactive programming library
 webpack:webpack
 static-html
 kadira:flow-router-ssr
+check

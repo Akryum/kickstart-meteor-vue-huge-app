@@ -1,14 +1,17 @@
 import Vue from 'vue';
 
 // Routes
-import './routes';
+import './imports/routes';
+
+// Méthodes
+import 'main/both/imports/methods';
 
 // Style
 import './style/main.less';
 
 // Vue
-import './directives';
-import './filters';
+import './imports/directives';
+import './imports/filters';
 
 // Root component
 import layout from './components/AppLayout.vue';

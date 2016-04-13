@@ -6,6 +6,10 @@ It looks like this:
 
 ![screenshot](preview.png?raw=true "Screenshot of the kickstart app")
 
+With a todos list app example (with real-time reactivity):
+
+![screenshot](preview2.png?raw=true "Screenshot of the example app")
+
 Tested with Meteor 1.3.1
 
 ## Usage
@@ -19,9 +23,10 @@ The example app has two lazy loaded modules, thanks to webpack code-splitting. H
 
 All of your style files and most of your Vue components will be fully hot-reloaded (template, style and code). Only your app layout component should trigger an automatic page refresh.
 
+A sample todos list app is included, featuring real-time reactivity thanks to meteor.
+
 ## TODO
 
-- Meteor data example (todos list)
 - More helpful Readme.md
 - Server-side rendering for progressive enhancement
 - Server-side caching

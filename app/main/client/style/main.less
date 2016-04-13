@@ -1,22 +1,33 @@
 @import './vars.less';
 @import './mixins.less';
 
-html, body {
+html, body, input, textarea {
     font-family: 'Open Sans', sans-serif;
     color: @page-color;
     background: @page-background;
+    font-size: 11pt;
+}
+
+body {
     margin: 24px;
     text-align: center;
-    font-size: 11pt;
 }
 
 a {
     color: @link-color;
     text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: @link-hover-color;
+    }
 }
 
-p {
-    max-width: 400px;
+p, form, hr {
+    max-width: @page-size;
+}
+
+p, form {
     margin: @padding auto;
     text-align: left;
 
@@ -26,10 +37,23 @@ p {
     }
 }
 
+.input, textarea {
+    border-radius: @border-radius;
+    background: @input-background;
+    color: @input-color;
+    border: @input-border;
+    padding: @padding/2 @padding;
+    outline: none;
+
+    &:active, &:focus {
+        border: @input-active-border;
+    }
+}
+
 nav {
     a {
         margin-right: 12px;
-        color: @nav-link-color;
+        color: @nav-link-color !important;
         border-bottom: solid 4px transparent;
 
         &:hover {
@@ -39,7 +63,7 @@ nav {
 }
 
 hr {
-    margin: @padding * 2 @padding;
+    margin: @padding * 2 auto;
     border: none;
     border-top: @hr-border;
 }
