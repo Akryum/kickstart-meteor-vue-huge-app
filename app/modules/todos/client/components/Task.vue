@@ -17,12 +17,14 @@
         },
         data() {
             return {
+                /* We init the local attributes */
                 text: this.data.text,
                 done: this.data.done
             }
         },
         watch: {
             data(val) {
+                /* We update the local attributes if they change externally */
                 this.text = val.text;
                 this.done = val.done;
             }

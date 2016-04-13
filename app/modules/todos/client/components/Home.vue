@@ -53,6 +53,13 @@
         <p class="dir">
             <span>app</span>&#47;<span>main</span>&#47;<span>client</span>&#47;<span>components</span>&#47;<span>NotFound.vue</span>
         </p>
+        <p>
+            Add your Vue directives and filters here:
+        </p>
+        <p class="dir">
+            <span>app</span>&#47;<span>main</span>&#47;<span>client</span>&#47;<span>imports</span>&#47;<span>directives.js</span><br />
+            <span>app</span>&#47;<span>main</span>&#47;<span>client</span>&#47;<span>imports</span>&#47;<span>filters.js</span>
+        </p>
         <hr />
         <p>
             Add modules here (copy todos module folder):
@@ -61,7 +68,7 @@
             <span>app</span>&#47;<span>modules</span>&#47;<span>your-module</span>
         </p>
         <p class="warning">
-            All your client-specific files must be under a client folder for the hot-reloading to work (or else, the server may restart unexpectedly). See <a href="https://github.com/thereactivestack/meteor-webpack/issues/71">#71</a>.
+            <i class="zmdi zmdi-alert-circle-o"></i> All your client-specific files must be under a client folder for the hot-reloading to work (or else, the server may restart unexpectedly). See <a href="https://github.com/thereactivestack/meteor-webpack/issues/71">#71</a>.
         </p>
         <p>
             For example:
@@ -70,15 +77,35 @@
             <span>app</span>&#47;<span>modules</span>&#47;<span>your-module</span>&#47;<span><b>client</b></span>&#47;<span>components</span>&#47;<span>YourComponent.vue</span>
         </p>
         <p>
-            Don't forget to include the module routes here:
+            <i class="zmdi zmdi-alert-circle"></i> Don't forget to include the module routes here:
         </p>
         <p class="dir">
-            <span>app</span>&#47;<span>main</span>&#47;<span>client</span>&#47;<span>routes.js</span>
+            <span>app</span>&#47;<span>main</span>&#47;<span>client</span>&#47;<span>imports</span>&#47;<span>routes.js</span>
         </p>
         <p class="console">
             import 'modules/todos/client/routes';<br />
             import 'modules/admin/client/routes';<br />
             import 'modules/your-module/client/routes';
+        </p>
+        <p>
+            <i class="zmdi zmdi-alert-circle"></i> Also include the module methods here:
+        </p>
+        <p class="dir">
+            <span>app</span>&#47;<span>main</span>&#47;<span>both</span>&#47;<span>imports</span>&#47;<span>methods.js</span>
+        </p>
+        <p class="console">
+            import 'modules/todos/methods';<br />
+            import 'modules/your-module/methods';
+        </p>
+        <p>
+            <i class="zmdi zmdi-alert-circle"></i> And include the module publications here:
+        </p>
+        <p class="dir">
+            <span>app</span>&#47;<span>main</span>&#47;<span>server</span>&#47;<span>imports</span>&#47;<span>publications.js</span>
+        </p>
+        <p class="console">
+            import 'modules/todos/publications';<br />
+            import 'modules/your-module/publications';
         </p>
         <hr />
         <p>
