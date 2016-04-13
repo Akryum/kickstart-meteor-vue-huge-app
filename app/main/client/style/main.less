@@ -38,6 +38,12 @@ nav {
     }
 }
 
+hr {
+    margin: @padding * 2 @padding;
+    border: none;
+    border-top: @hr-border;
+}
+
 .console {
     background: @console-background;
     color: @console-color;
@@ -64,5 +70,16 @@ nav {
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+
+.warning {
+    background: @warning-background;
+    color: @warning-color;
+    padding: @padding;
+    border-radius: @border-radius;
+
+    a {
+        color: @warning-link-color;
     }
 }
