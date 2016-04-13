@@ -1,0 +1,109 @@
+@import './vars.less';
+@import './mixins.less';
+
+html, body, input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    color: @page-color;
+    background: @page-background;
+    font-size: 11pt;
+}
+
+body {
+    margin: 24px;
+    text-align: center;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: @link-hover-color;
+    }
+}
+
+p, form, hr {
+    max-width: @page-size;
+}
+
+p, form {
+    margin: @padding auto;
+    text-align: left;
+
+    img {
+        max-width: 100%;
+        margin: @padding;
+    }
+}
+
+.input, textarea {
+    border-radius: @border-radius;
+    background: @input-background;
+    color: @input-color;
+    border: @input-border;
+    padding: @padding/2 @padding;
+    outline: none;
+
+    &:active, &:focus {
+        border: @input-active-border;
+    }
+}
+
+nav {
+    a {
+        margin-right: 12px;
+        color: @nav-link-color !important;
+        border-bottom: solid 4px transparent;
+
+        &:hover {
+            border-bottom-color: @vue-color;
+        }
+    }
+}
+
+hr {
+    margin: @padding * 2 auto;
+    border: none;
+    border-top: @hr-border;
+}
+
+.console {
+    background: @console-background;
+    color: @console-color;
+    font-family: monospace;
+    padding: @console-padding;
+    border-radius: @border-radius;
+}
+
+.dir {
+    background: @dir-background;
+    color: fade(@dir-color, 60%);
+    padding: @dir-padding;
+    border-radius: @border-radius;
+    font-family: monospace;
+
+    span {
+        color: @dir-color;
+        margin: 0 2px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.warning {
+    background: @warning-background;
+    color: @warning-color;
+    padding: @padding;
+    border-radius: @border-radius;
+
+    a {
+        color: @warning-link-color;
+    }
+}
