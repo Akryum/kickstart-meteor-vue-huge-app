@@ -5,4 +5,4 @@ import {patchVue} from './meteor-vue';
 patchVue(Vue, useBlaze);
 
 // Start
-import 'main/client/main';
+require('main/client/main');
