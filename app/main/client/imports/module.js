@@ -23,22 +23,34 @@ export default class Module {
             // Alias for hooks
             var module = this;
 
-            // Created hook
-            this.Component.created.push(function() {
-                module.component = this;
+            this._componentReady = () => {
                 resolve();
-            });
+            };
 
-            // Destroyed hook
-            if(!this.Component.destroyed) {
-                this.Component.destroyed = [];
+            if(!this.__hooksApplied) {
+
+                // Created hook
+                if(!this.Component.created) {
+                    this.Component.created = [];
+                }
+                this.Component.created.push(function() {
+                    module.component = this;
+                    module._componentReady();
+                });
+
+                // Destroyed hook
+                if(!this.Component.destroyed) {
+                    this.Component.destroyed = [];
+                }
+                this.Component.destroyed.push(function() {
+                    module.component = null;
+                });
+
+                // Register component
+                Vue.component(this.Component.name, this.Component);
+
+                this.__hooksApplied = true;
             }
-            this.Component.destroyed.push(function() {
-                module.component = null;
-            });
-
-            // Register component
-            Vue.component(this.Component.name, this.Component);
 
             // Switch to component in the root component
             root.currentView = this.Component.name;
@@ -46,16 +58,14 @@ export default class Module {
     };
 
     needInit = () => {
-        return (this.component === null || Module.current !== this);
+        return (this.component === null);
     };
 
     startup = () => {
         return new Promise((resolve) => {
+            Module.current = this;
             if (this.needInit()) {
-                this.createComponent().then(() => {
-                    Module.current = this;
-                    resolve();
-                });
+                this.createComponent().then(resolve);
             } else {
                 resolve();
             }
